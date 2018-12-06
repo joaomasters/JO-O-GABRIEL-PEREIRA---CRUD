@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- icones  -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <!-- JQuery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <!-- js do Bootstrap  -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- JQuery UI para fazer o autocomplete-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- aquivo principal execulta as funcoes solicitadas -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="gera_pedido.php" method="POST">
+        	<div align="center">
+            <h1>Formulário Clientes</h1>
+             </div>
+            <!-- Cabeçalho -->
+            <div class="top">
+                <!-- Primeira Linha -->
+                <div class="row">
+                    <div class=" col-md-2">
+                        <div class="form-group">
+                            <label for="id">Cod. Cliente</label>
+                            <input type="id" name="id" id="id" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" class="form-control" name="" id="cpf" placeholder="___.___.___-__">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="nome" class="form-control required" id="nome" required="required">
+                        </div>
+                    </div>
+                </div>
+                <!-- segunda linha endereço -->
+                <div class="row">
+                    <div class="col-md-2 ">
+                        <div class="input-group">
+                            <label for="cep">CEP</label>
+                            <input type="text" class="form-control" id="cep" placeholder="__.___-___">
+                            <span class="input-group-btn"><button type="button" class="btn btn-default">Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="cep">Endereço</label>
+                            <input type="text" name="endereco" id="endereco" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <form method="post" action="">
+                             <div class="form-group col-md-2">
+                             <label for="ds_sexo"> Sexo</label>
+                             <select class="form-control" name="ds_sexo"id="ds_sexo">
+                          <option value="F">FEMININO</option>
+                          <option value="M">MASCULINO</option>
+                         </select>
+                         </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slinha cidade estado -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cep">Bairro</label>
+                            <input type="text" name="bairro" id="bairro" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="uf">Estado</label>
+                            <input type="text" name="uf" id="uf" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" class="form-control" required="required">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- linha telefone celular e email -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email " class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class=" col-md-3">
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="telefone" name="telefone" id="telefone" class="form-control" placeholder="(__) ____-____">
+                        </div>
+                    </div>
+                    <div class=" col-md-3">
+                        <div class="form-group">
+                            <label for="celular">Celular</label>
+                            <input type="celular" name="celular" id="celular" class="form-control" placeholder="(__) _ ____-____">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <table class="table table-condensed" >
+                    <thead>
+                        <tr>
+                            <th width="20">#</th>
+                            <th  width="500">Produto</th>
+                            <th  width="80">Qtd</th>
+                            <th width="140">Valor</th>
+                            <th width="150">Total</th>
+                            <th width="80"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista">
+                        
+                        <tr>
+                            <td><input type="text" class="form-control" name="lista['produto']['id'][]"></td>
+                            <td><input type="text"  class="form-control" name="lista['produto']['nome'][]"></td>
+                            <td><input type="text"  class="form-control" name="lista['produto']['qtd'][]"></td>
+                            <td><input type="text"  class="form-control" name="lista['produto']['valor'][]"></td>
+                            <td><input type="text"  class="form-control" name="lista['produto']['total'][]"></td>
+                            <td width="80">
+                                <button type="button" onclick="excluir(this)" class="btn btn-danger delete-linha"><i class="icon-trash"></i></button>
+                            </td>
+                            <script>
+                            </script>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" >
+                                
+                            </td>
+                            <td colspan="2">
+                                    <button type="button" class="btn btn-success adiciona-linha">adicionar produto</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+         <input type="submit" name="enviar" class="btn btn-success">
+        </form>
+    </div>
+</body>
+
+</html>
